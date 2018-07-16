@@ -2,6 +2,7 @@ Rails.application.routes.draw do
   get 'sessions/new'
   resources :users
   resources :sessions
+  resources :accomadations
   get 'user/create' , to:'users#create'
   post 'login', to: 'sessions#create'
   delete 'logout', to: 'sessions#destroy'

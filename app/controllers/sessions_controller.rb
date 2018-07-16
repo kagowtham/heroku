@@ -1,5 +1,4 @@
 class SessionsController < ApplicationController
-  skip_before_action :verify_authenticity_token, only: :create
 
   def create
 
@@ -23,7 +22,7 @@ class SessionsController < ApplicationController
 
   def session_payload(user)
     {
-        user: { id: user.id, email: user.email },
+        user: { id: user.id, email: user.email, types: user.types },
         csrf_token: form_authenticity_token
     }
   end

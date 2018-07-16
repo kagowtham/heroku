@@ -1,0 +1,2 @@
+class Accomadation < ApplicationRecord
+end
