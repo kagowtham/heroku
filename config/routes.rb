@@ -3,6 +3,8 @@ Rails.application.routes.draw do
   resources :users
   resources :sessions
   resources :accomadations
+  resources :locations
+  post 'locations/withcountry' , to:'locations#withcountry'
   get 'user/create' , to:'users#create'
   post 'login', to: 'sessions#create'
   delete 'logout', to: 'sessions#destroy'

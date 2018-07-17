@@ -12,12 +12,15 @@ class AccomadationsController < ApplicationController
       #render 'new'
     end
   end
-
+  def show
+    render json: Accomadation.find(params[:id])
+  end
   private
 
   def user_params
     params.require(:accomadation).permit(:name, :country,:city, :spot,:price)
   end
+
 
 
 end
