@@ -29,7 +29,7 @@
     <orderEntry type="library" scope="PROVIDED" name="actionmailer (v5.2.0, RVM: ruby-2.5.0) [gem]" level="application" />
     <orderEntry type="library" scope="PROVIDED" name="actionpack (v5.2.0, RVM: ruby-2.5.0) [gem]" level="application" />
     <orderEntry type="library" scope="PROVIDED" name="actionview (v5.2.0, RVM: ruby-2.5.0) [gem]" level="application" />
-    <orderEntry type="library" scope="PROVIDED" name="active_model_serializers (v0.10.7, RVM: ruby-2.5.0) [gem]" level="application" />
+    <orderEntry type="library" scope="PROVIDED" name="active_model_serializers (v0.8.4, RVM: ruby-2.5.0) [gem]" level="application" />
     <orderEntry type="library" scope="PROVIDED" name="activejob (v5.2.0, RVM: ruby-2.5.0) [gem]" level="application" />
     <orderEntry type="library" scope="PROVIDED" name="activemodel (v5.2.0, RVM: ruby-2.5.0) [gem]" level="application" />
     <orderEntry type="library" scope="PROVIDED" name="activerecord (v5.2.0, RVM: ruby-2.5.0) [gem]" level="application" />

@@ -1,15 +1,19 @@
 class AccomadationsController < ApplicationController
 
   def index
-    render json: Accomadation.all
+    @location = Location.find(params[:id])
+    render json: Accomadation.where("location_id = ?",@location.id)
   end
 
   def create
     @accomadation = Accomadation.new(user_params)
+    @location=Location.find_by(country: @accomadation.country,city: @accomadation.city,spot: @accomadation.spot)
+    print(@location)
+    @accomadation.location=@location
     if @accomadation.save
       render json: @accomadation
     else
-      #render 'new'
+      render json: @location
     end
   end
   def show
