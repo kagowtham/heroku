@@ -1,6 +1,16 @@
 class LocationsController < ApplicationController
   def index
+    if params[:group] != nil
+      if params[:country] != nil
+        render json: Location.where(country: params[:country]).group(params[:group])
+      else
+        render json:Location.group(params[:group])
+      end
+
+
+    else
     render json: Location.all
+    end
   end
 
   def create
@@ -10,6 +20,10 @@ class LocationsController < ApplicationController
     else
       #render 'new'
     end
+  end
+  def destroy
+
+    render json: Location.all
   end
   def withcountry
     @location = Location.new( params.permit(:country))

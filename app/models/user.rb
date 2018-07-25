@@ -1,4 +1,5 @@
 class User < ApplicationRecord
+  has_many :selects
   before_save { email.downcase! }
   before_save { types.downcase! }
   validates :firstname,  presence: true, length: { maximum: 50 }

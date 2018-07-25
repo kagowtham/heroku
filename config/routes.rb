@@ -4,6 +4,8 @@ Rails.application.routes.draw do
   resources :sessions
   resources :accomadations
   resources :locations
+  resources :old_locations
+  resources :new_locations
   post 'locations/withcountry' , to:'locations#withcountry'
   get 'user/create' , to:'users#create'
   post 'login', to: 'sessions#create'
