@@ -1,4 +1,4 @@
-class Select < ApplicationRecord
+class Itinerary < ApplicationRecord
   belongs_to :location
   belongs_to :user
 end

@@ -1,11 +1,13 @@
 class AccomadationsController < ApplicationController
 
   def index
-    if params[:country] != nil
-       render json: Location.joins(:accomadations).where(country: params[:country]).select('accomadations.id,accomadations.country,accomadations.city,accomadations.spot,accomadations.name,accomadations.price').group(:spot),each_serializer:LocationJoinSerializer
+    if params[:location_id] != nil
+      @location=Location.find(params[:location_id])
+       render json: Accomadation.where(city:@location.city,country: @location.country)
     else
-       @accomadation=Accomadation.find(params[:id])
-       render json: Accomadation.where(:country => @accomadation.country,:city => @accomadation.city,:spot => @accomadation.spot)
+       # @accomadation=Accomadation.find(params[:id])
+       # render json: Accomadation.where(:country => @accomadation.country,:city => @accomadation.city,:spot => @accomadation.spot)
+       render json: Accomadation.all
     end
   end
 

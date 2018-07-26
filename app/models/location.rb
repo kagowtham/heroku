@@ -1,4 +1,4 @@
 class Location < ApplicationRecord
   has_many :accomadations
-  has_many :selects
+  has_many :itineraries
 end

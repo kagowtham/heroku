@@ -1,5 +1,5 @@
 class User < ApplicationRecord
-  has_many :selects
+  has_many :itineraries
   before_save { email.downcase! }
   before_save { types.downcase! }
   validates :firstname,  presence: true, length: { maximum: 50 }

@@ -5,16 +5,19 @@ class OldLocationsController < ApplicationController
        @loc=Location.find(params[:id])
        @l =Location.where(country: @loc.country, city: @loc.city)
        @user=current_user
-       Select.delete(Select.where(user_id: @user.id))
-       render json:Location.left_outer_joins(:selects).where(country: @loc.country,city: @loc.city, selects:{user_id: nil,location_id:nil})
+       Itinerary.delete(Itinerary.where(user_id: @user.id))
+       render json:Location.left_outer_joins(:itineraries).where(country: @loc.country,city: @loc.city, itineraries:{user_id: nil,location_id:nil,accomadation_id:nil})
     elsif params[:removeid] !=nil
        @loc=Location.find(params[:removeid])
        @user=current_user
-       Select.create(user_id:@user.id,location_id:@loc.id)
-       render json:Location.left_outer_joins(:selects).where(country: @loc.country,city: @loc.city, selects:{user_id: nil,location_id:nil})
+       @itinerary=Itinerary.new
+       @itinerary.user_id=@user.id
+       @itinerary.location_id=@loc.id
+       @itinerary.save()
+       render json:Location.left_outer_joins(:itineraries).where(country: @loc.country,city: @loc.city, itineraries:{user_id: nil,location_id:nil,accomadation_id:nil})
     elsif params[:putid] != nil
       @loc=Location.find(params[:putid])
-      render json:Location.left_outer_joins(:selects).where(country: @loc.country,city: @loc.city, selects:{user_id: nil,location_id:nil})
+      render json:Location.left_outer_joins(:itineraries).where(country: @loc.country,city: @loc.city, itineraries:{user_id: nil,location_id:nil,accomadation_id:nil})
     end
   end
 

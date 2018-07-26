@@ -6,6 +6,8 @@ Rails.application.routes.draw do
   resources :locations
   resources :old_locations
   resources :new_locations
+  resources :itineraries
+  get 'totals' , to:"itineraries#totals"
   post 'locations/withcountry' , to:'locations#withcountry'
   get 'user/create' , to:'users#create'
   post 'login', to: 'sessions#create'
