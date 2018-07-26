@@ -9,8 +9,13 @@ gem 'rails', '~> 5.2.0'
 gem 'bcrypt',         '3.1.12'
 #store encrypt pwd
 gem 'active_model_serializers' ,'~> 0.8.1'
-gem 'sqlite3'
 # Use Puma as the app server
+group :development ,:test do
+  gem 'sqlite3'
+end
+group :production do
+  gem 'pg'
+end
 gem 'puma', '~> 3.11'
 # Build JSON APIs with ease. Read more: https://github.com/rails/jbuilder
 # gem 'jbuilder', '~> 2.5'
